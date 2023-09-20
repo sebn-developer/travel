@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+<style>
+input{
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+  width: 100%;
+}
+
+form{
+align:center
+    }
+    fieldset{
+    text-align:center
+    }
+
+</style>
+</head>
+<body style="background-image:url({% static 'images/background2.jpg' %});">
+<fieldset>
+    <img src="https://media.glassdoor.com/sql/3071579/inmakes-software-solutions-squarelogo-1580214710967.png" alt="" class="responsive-img valign profile-image-login">
+<form action="" method="post">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Username"><br><br>
+    <input type="text" name="first_name" placeholder="First name"><br><br>
+    <input type="text" name="last_name" placeholder="Last name"><br><br>
+    <input type="email" name="email" placeholder="Email"><br><br>
+    <input type="password" name="password" placeholder="Password"><br><br>
+    <input type="password" name="password1" placeholder="Again Password"><br><br>
+    <input type="submit"><br>
+</form>
+    </fieldset
+{% for msg in messages %}
+<h2>{{msg}}</h2>
+{% endfor %}
+</body>
+</html>
